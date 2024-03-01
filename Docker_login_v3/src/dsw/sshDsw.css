@@ -1,0 +1,72 @@
+﻿body
+{
+    text-align: center;
+    vertical-align: top;
+    overflow: visible;
+
+}
+.centrarDescargas
+{
+    margin:0 auto;
+    text-align: center;
+}
+.Cuerpo
+{
+    width: 100%;
+}
+
+.CuerpoLateralIzq
+{
+    width: 111px;
+}
+.CuerpoLateralDer
+{
+    width: 624px;
+}
+
+#TarjetaDswSoftware
+{
+    background-image: url(images/tarjetaDsw.jpg);
+    width: 230px;
+    height: 107px;
+    text-align: left;
+}
+#TituloTarjetaDsw
+{
+    position: relative;
+    left: 85px;
+    width: 131px;
+    top: 15px;
+    height: 60px;
+    font-weight: bold;
+    font-size: 8pt;
+    color: navy;
+}
+.imgBtnDescargaDsw
+{
+    width: 69px;
+    height: 24px;
+    left: 150px;
+    position: relative;
+    top:12px;
+} 
+
+
+.DswTitulo
+{
+    border-left-color: black;
+    border-bottom-color: black;
+    border-top-color: black;
+    border-right-color: black;
+    font-weight: bold;
+    color: #000099;
+    /*background-color: #cccccc;*/
+    background-color: #F7F6F3;
+    border-bottom-style: solid;
+    cursor: hand;
+}
+
+.prueba
+{
+    color: #cccccc;
+}
