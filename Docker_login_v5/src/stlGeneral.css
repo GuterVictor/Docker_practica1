@@ -1,0 +1,188 @@
+﻿body
+{
+    font: normal 11px arial,helvetica,sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    text-align: center;
+    overflow: visible;
+    margin: 0;
+    border:0;
+}
+
+body /* Mozilla Firefox alignment */
+{  
+    text-align: -moz-center; 
+    vertical-align: top;
+    overflow: visible;
+    margin: 0;
+}
+/*
+
+td{ 
+   	font:normal 11px arial,helvetica,sans-serif; color:#666;   	
+   	border-collapse: collapse;
+}
+*/
+.Contenido { 
+   	font:normal 11px arial,helvetica,sans-serif; color:#666; padding:0; margin:0; border:0px none #FFF;   	
+}
+
+a {
+	font:bold arial,helvetica,sans-serif; cursor:hand; text-decoration:none; overflow:visible; padding:0px;
+}
+a:link {
+	color: #002C95;
+}
+a:hover {
+	color: #002C95; text-decoration: underline;
+}
+a:visited {
+	color: #0450FF;
+}
+.mas_info {
+	font-weight:normal; font-size:10px; color:#002063; margin:5px 3px 5px 3px; text-align:right;
+}
+.fondo_cuerpo
+{
+    background-color: #ffffff;   
+}
+
+.loguin {
+	font-weight:normal; font-size:12px; color:#fff; background:#002063; padding:3px 3px 3px 3px; text-align:center;
+}
+.direccion {
+	font-weight:normal; font-size:12px; color:#FFFFFF; text-align: left; vertical-align: middle; background-color:#0290CE; margin:0; padding:0 3px 0 3px;height: 9px;
+}
+.cabecera
+{
+    font-weight: bold;
+    font-size: 15px;
+    color: #002C95;
+    border-bottom: 2px none #002C95;
+    vertical-align: top;
+    background-color: #eeeeee;
+    text-align: justify;
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+/*
+td cuerpo
+{
+    font-weight: bold;
+    font-size: 15px;
+    color: #002C95;
+    border-bottom: 2px none #002C95;
+    vertical-align: top;
+    background-color: #ff0066;
+    text-align: justify;
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+*/
+/*css Tabla de contenidos*/
+.tblDeContenidos
+{   
+    color: #002C95;
+    background-color: #eeeeee;
+    width: 100%;    
+}
+.tblCabecera
+{
+    font-weight: bold;
+    font-size: 15px;
+    color: #002C95;
+    vertical-align: top;
+    background-color: #eeeeee;
+    text-align: justify;
+    padding-right: 15px;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    text-indent: 15px;
+}
+
+.tblContenido
+{    
+    font-size: 11px;
+    color: #666;    
+    vertical-align: top;
+    text-align: justify;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 90%;
+}
+    
+.tblEspacio
+{    
+    width:5%;    
+}
+.tblEnlace
+{
+    text-align: right;
+}
+
+
+.CalendarioTitulo
+{   
+    filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#ffffff', startColorstr='#cccccc', gradientType='0');    
+}
+
+.stlTablaPrincipal
+{
+    width: 735px;
+    height: 100px;
+    text-align: left;
+    background-color: #ffffff;    
+    border-collapse: collapse;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+}
+/*Menu*/
+
+.Menu{
+    background: url(images/menu_21.gif) repeat-x left top;
+    margin: 0;
+    height: 15px;
+    text-indent: 10%;
+    padding-left: 10px;
+}
+.MenuPrincipalStatic{
+    background: url(images/menu_21.gif) repeat-x left top;
+    margin: 0;
+    height: 15px;
+}
+
+.MenuPrincipalHoverStatic{
+    background: url(images/menu_22.gif) repeat-x left top;    
+    margin:0;
+    height: 15px; 
+}
+
+.MenuPrincipalDynamic{
+    background: url(images/menu_21.gif) repeat-x left top;
+    margin:0;
+    height: 15px;  
+    width:16em; 
+}
+.MenuPrincipalHoverDynamic{
+    background: url(images/menu_22.gif) repeat-x left top;    
+    margin:0;
+    height: 15px;  
+    width:16em;
+}
+/*fin de menu*/
+
+.menu_carpetas {
+	font-weight:normal; font-size:11px; color:#666666; margin:5px 3px 5px 3px;
+}
