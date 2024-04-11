@@ -60,7 +60,7 @@ EOF
 yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 
 systemctl enable --now kubelet
-source <(kubectl completion bash)
-kubectl completion bash > /etc/bash_completion.d/kubectl
+echo 'source <(kubectl completion bash)' >>~/.bashrc
+kubectl completion bash >/etc/bash_completion.d/kubectl
 
 reboot
