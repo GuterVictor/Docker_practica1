@@ -1,14 +1,14 @@
 #!/bin/bash
 
-hostnamectl set-hostname K8-master
+hostnamectl set-hostname k8-master
 
-cat <<EOF | sudo tee /etc/hosts
-192.168.0.30 K8-master
-192.168.0.31 K8-worker01
-192.168.0.32 K8-worker02
-EOF
+echo "10.1.15.16 k8-master" >> /etc/hosts
+echo "10.1.15.17 k8-worker01" >> /etc/hosts
+echo "10.1.15.18 k8-worker02" >> /etc/hosts
 
+swapoff -a
 sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+setenforce 0
 sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=permissive/g' /etc/sysconfig/selinux
 
 swapon
@@ -60,8 +60,8 @@ EOF
 yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 
 systemctl enable --now kubelet
-source <(kubectl completion bash)
-kubectl completion bash > /etc/bash_completion.d/kubectl
+echo 'source <(kubectl completion bash)' >>~/.bashrc
+kubectl completion bash >/etc/bash_completion.d/kubectl
 
 reboot
 
