@@ -2,9 +2,9 @@
 
 hostnamectl set-hostname k8-master
 
-echo "10.1.15.16 k8-master" >> /etc/hosts
-echo "10.1.15.17 k8-worker01" >> /etc/hosts
-echo "10.1.15.18 k8-worker02" >> /etc/hosts
+echo "192.168.0.30 k8-master" >> /etc/hosts
+echo "192.168.0.31 k8-worker01" >> /etc/hosts
+echo "192.168.0.32 k8-worker02" >> /etc/hosts
 
 swapoff -a
 sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
@@ -65,9 +65,11 @@ kubectl completion bash >/etc/bash_completion.d/kubectl
 
 reboot
 
+########## Despues del reboot ##########
 
+#kubeadm init --control-plane-endpoint=192.168.0.30
+kubeadm init --control-plane-endpoint=k8-master
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
-
