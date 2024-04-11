@@ -73,3 +73,16 @@ kubeadm init --control-plane-endpoint=k8-master
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+########## Despues de las uniones de los workers #########
+
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.3/manifests/calico.yaml
+kubectl get pods --all-namespaces
+kubectl label node worker0 node-role.kubernetes.io/worker=worker
+
+kubectl create deployment web-app01 --image nginx --replicas 2
+kubectl expose deployment web-app01 --type NodePort --port 80
+kubectl get deployment web-app01
+kubectl get pods
+kubectl get svc web-app01
+curl worker0:31225
