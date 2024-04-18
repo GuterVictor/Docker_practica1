@@ -1,0 +1,105 @@
+﻿/*
+body
+{
+    text-align: center;
+    vertical-align: top;
+}
+body /* Mozilla Firefox alignment */ 
+/*
+{   text-align: -moz-center;
+    vertical-align: top;
+    }
+*/
+#gpoLogos
+{
+    width: 736px;
+    height:65px;
+    position:relative;
+    text-align:left;     
+}
+#menuDCyC
+{
+
+}
+.cabAlineaIzq{
+    width: 736px;
+    text-align:left; 
+}
+
+/* ---- logos ----- */
+
+#cabLineaInicial
+{
+    height: 10px;
+    background-color: #002063;
+}
+
+
+#gpoIPN
+{
+    width: 366px;
+    height: 55px;
+    position: relative;
+    float: left;
+    cursor: hand;
+}    
+    
+    
+#imgIPN
+{
+    width: 45px;
+    height: 55px;    
+    background-image: url(../images/ipn_01.gif);
+    position:absolute ; 
+    left: 0px;
+    top: 0px;
+}
+#imgTxtIPN{
+    width: 225px;
+    height: 28px;
+    background-image: url(../images/ipn_02.gif);
+    position: absolute ;
+    left: 45px;
+    top: 0px;
+ 
+}
+#txtIPN
+{
+    width: 225px;
+    height: 26px;   
+    position: absolute;
+    left: 45px;
+    top: 28px;
+    text-align: right;
+}
+#gpoDCYC{
+    width: 366px;
+    height: 55px;
+    position:relative;           
+    float:right ; 
+    cursor: hand;  
+}
+#imgDCYC{
+    width: 59px;
+    height: 54px;    
+    background-image: url(../images/dcyc_01.gif);
+    position:absolute ; 
+    left:307px;
+    top: 0px;
+}
+#txtDCYC
+{
+    width: 307px;
+    height: 54px;
+    color: #002063;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: right;
+}
+
+#imgBaner{
+    width: 736px;
+}
+/*fin de logos*/
+
