@@ -1,0 +1,7 @@
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/dual-stack-support/
+https://hashnode.com/discussions/post/65f9b09a75abd3a0a335b24f?source=discussion_page_recent_articles_widget
+https://blog.mechcloud.io/how-to-install-kubernetes-with-dual-stack-ipv4ipv6-networking
+https://raw.githubusercontent.com/projectcalico/calico/v3.27.0/manifests/custom-resources.yaml
+https://github.com/projectcalico/calico/blob/master/manifests/tigera-operator.yaml
+https://www.bookstack.cn/read/kubernetes-1.23-en/ae2cb25f190ff6bd.md
+https://ahmedelfakharany.com/how-to-enable-ipv6-on-kubernetes-aka-dual-stack-cluster-ac0fe294e4cf
