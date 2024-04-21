@@ -5,3 +5,6 @@ https://raw.githubusercontent.com/projectcalico/calico/v3.27.0/manifests/custom-
 https://github.com/projectcalico/calico/blob/master/manifests/tigera-operator.yaml
 https://www.bookstack.cn/read/kubernetes-1.23-en/ae2cb25f190ff6bd.md
 https://ahmedelfakharany.com/how-to-enable-ipv6-on-kubernetes-aka-dual-stack-cluster-ac0fe294e4cf
+https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/dual-stack-support/
+https://www.youtube.com/watch?v=Zxz3YUqScCY&list=LL&index=17&t=827s
