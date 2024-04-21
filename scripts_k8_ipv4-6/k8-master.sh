@@ -69,6 +69,17 @@ kubectl completion bash > /etc/bash_completion.d/kubectl
 reboot
 
 -------------------------------------------------------------------------------------------
+kubeadm init --pod-network-cidr=10.244.0.0/16,2001:db8:42:0::/56 --service-cidr=10.96.0.0/16,2001:db8:42:1::/112
+
+vim k8-init
+
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+--------------------------------------------------------------------------------------------
+
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.27.3/manifests/tigera-operator.yaml
+kubectl create -f custom-resources.yaml
+
+watch kubectl get pods -n calico-system
+kubectl get nodes -o wide
