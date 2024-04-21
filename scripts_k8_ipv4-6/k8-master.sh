@@ -68,32 +68,7 @@ kubectl completion bash > /etc/bash_completion.d/kubectl
 
 reboot
 
-
-
+-------------------------------------------------------------------------------------------
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
-
-
-# vim /etc/NetworkManager/system-connections/ens160.nmconnection
-
-[connection]
-id=ens160
-uuid=8020c16b-cdaa-3268-95ba-eca6ae8efffb
-type=ethernet
-autoconnect-priority=-999
-interface-name=ens160
-timestamp=1713230297
-
-[ethernet]
-
-[ipv4]
-address1=192.168.0.30/24,192.168.0.1
-method=manual
-
-[ipv6]
-address=2001:0db8:85a3::1/64
-method=manual
-
-
-[proxy]
