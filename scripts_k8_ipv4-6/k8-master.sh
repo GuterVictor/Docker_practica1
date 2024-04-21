@@ -84,3 +84,18 @@ kubectl create -f custom-resources.yaml
 
 watch kubectl get pods -n calico-system
 kubectl get nodes -o wide
+
+----------------------------------------------------------------------------------------------
+
+ipPools:
+    - blockSize: 26
+      cidr: 10.244.0.0/16
+      encapsulation: VXLANCrossSubnet
+      natOutgoing: Enabled
+      nodeSelector: all()
+    - blockSize: 122 
+      cidr: 2001:db8:42:0::/56
+      encapsulation: VXLANCrossSubnet
+      natOutgoing: Enabled
+      nodeSelector: all()
+      
