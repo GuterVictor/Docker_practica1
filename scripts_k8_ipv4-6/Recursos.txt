@@ -9,3 +9,6 @@ https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/dual-stack-support/
 https://www.youtube.com/watch?v=Zxz3YUqScCY&list=LL&index=17&t=827s
 https://github.com/flannel-io/flannel
+https://www.nbtechsupport.co.in/2021/05/deploy-apache-web-server-on-kubernetes.html
+https://www.paradigmadigital.com/dev/kubernetes-almacenamiento-persistencia-datos/
+https://spacelift.io/blog/kubernetes-persistent-volumes
