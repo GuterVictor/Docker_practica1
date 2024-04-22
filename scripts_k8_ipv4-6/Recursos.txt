@@ -8,3 +8,4 @@ https://ahmedelfakharany.com/how-to-enable-ipv6-on-kubernetes-aka-dual-stack-clu
 https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/dual-stack-support/
 https://www.youtube.com/watch?v=Zxz3YUqScCY&list=LL&index=17&t=827s
+https://github.com/flannel-io/flannel
