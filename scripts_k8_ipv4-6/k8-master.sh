@@ -69,7 +69,7 @@ kubectl completion bash > /etc/bash_completion.d/kubectl
 reboot
 
 -------------------------------------------------------------------------------------------
-kubeadm init --pod-network-cidr=10.244.0.0/16,2001:db8:42:0::/56 --service-cidr=10.96.0.0/16,2001:db8:42:1::/112
+kubeadm init --pod-network-cidr=10.244.0.0/16,2001:db8:42:0::/56 --service-cidr=10.96.0.0/16,2001:db8:42:1::/112 --control-plane-endpoint=k8-master
 
 vim k8-init
 
