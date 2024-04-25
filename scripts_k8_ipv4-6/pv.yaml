@@ -9,7 +9,7 @@ spec:
     - ReadWriteOnce
   storageClassName: nfs
   nfs:
-    server: 10.1.100.32
+    server: 10.x.x.32
     path: /vol_K8s_pruebas
   claimRef:
     namespace: httpd-namespace-nautilus
