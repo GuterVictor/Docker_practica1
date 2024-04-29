@@ -9,3 +9,4 @@ sudo chmod +x /opt/bin/franela
 kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 
 https://cn.linux-console.net/?p=3506
+https://qiita.com/segre5458/items/3d6bf9a10b83ddedfa1b
