@@ -1,0 +1,11 @@
+En este ejemplo, use franela como complemento CNI para la implementación de Kubernetes. Esto requiere que instale los binarios de franela en los nodos de Kubernetes.
+Ejecute el siguiente comando para crear un nuevo directorio \ /opt/bin \. Luego, descargue el archivo binario de franela.
+
+mkdir -p /opt/bin/ 
+sudo curl -fsSLo /opt/bin/flanneld https://github.com/flannel-io/flannel/releases/download/v0.19.0/flanneld-amd64 
+Ahora haga que el binario \flanneld\ sea ejecutable cambiando los permisos del archivo usando el siguiente comando. Este binario "franela" se ejecutará automáticamente cuando configure el complemento de red Pod.
+sudo chmod +x /opt/bin/franela 
+
+kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+
+https://cn.linux-console.net/?p=3506
