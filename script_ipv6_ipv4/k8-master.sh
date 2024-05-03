@@ -1,9 +1,10 @@
 #!/bin/bash
 
-hostnamectl set-hostname k8-master
+hostnamectl set-hostname k8-controlplane
 
-echo "192.168.0.30 k8-master" >> /etc/hosts
-echo "192.168.0.31 k8-worker01" >> /etc/hosts
+echo "fc00:7e57::16 k8-controlplane" >> /etc/hosts
+echo "fc00:7e57::17 k8-worker01" >> /etc/hosts
+echo "fc00:7e57::18 k8-worker02" >> /etc/hosts
 
 cat > /etc/NetworkManager/conf.d/calico.conf << EOF
 [keyfile]
@@ -13,7 +14,9 @@ EOF
 sysctl -w net.netfilter.nf_conntrack_max=1000000
 echo "net.netfilter.nf_conntrack_max=1000000" >> /etc/sysctl.conf
 
-sudo dnf install kernel-devel-$(uname -r)
+dnf install kernel-devel-$(uname -r) -y
+dnf install iptables-services -y
+systemctl restart iptables
 
 sudo modprobe br_netfilter
 sudo modprobe ip_vs
@@ -56,14 +59,26 @@ sudo systemctl reboot
 
 #!/bin/bash
 
+sudo firewall-cmd --zone=public --permanent --add-port=179/tcp
+sudo firewall-cmd --zone=public --permanent --add-port=443/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=6443/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=2379-2380/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=10250/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=10251/tcp
+sudo firewall-cmd --zone=public --permanent --add-port=10257/tcp
+sudo firewall-cmd --zone=public --permanent --add-port=10259/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=10252/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=10255/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=5473/tcp
+sudo firewall-cmd --zone=public --permanent --add-port=4789/udp
+sudo firewall-cmd --zone=public --permanent --add-port=51820/udp
+sudo firewall-cmd --zone=public --permanent --add-port=51821/udp
 sudo firewall-cmd --reload
+
+sudo systemctl stop firewalld
+sudo systemctl disable firewalld 
+
+echo 1 | sudo tee /proc/sys/net/ipv6/conf/default/forwarding
 
 cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
@@ -76,7 +91,8 @@ exclude=kubelet kubeadm kubectl cri-tools kubernetes-cni
 EOF
 
 dnf makecache; dnf install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
-systemctl enable --now kubelet.service
+
+
 sudo kubeadm config images pull
 
 
@@ -84,6 +100,9 @@ sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+source <(kubectl completion bash)
+kubectl completion bash > /etc/bash_completion.d/kubectl
 
 
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/tigera-operator.yaml
