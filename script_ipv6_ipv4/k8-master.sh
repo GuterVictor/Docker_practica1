@@ -2,9 +2,9 @@
 
 hostnamectl set-hostname k8-controlplane
 
-echo "fc00:7e57::16 k8-controlplane" >> /etc/hosts
-echo "fc00:7e57::17 k8-worker01" >> /etc/hosts
-echo "fc00:7e57::18 k8-worker02" >> /etc/hosts
+echo "xx:xx::x6 k8-controlplane" >> /etc/hosts
+echo "xx:xx::x7 k8-worker01" >> /etc/hosts
+echo "xx:xx::x8 k8-worker02" >> /etc/hosts
 
 cat > /etc/NetworkManager/conf.d/calico.conf << EOF
 [keyfile]
