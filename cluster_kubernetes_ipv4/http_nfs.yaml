@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpd-service-nautilus
+  namespace: httpd-service
+spec:
+  type: NodePort
+  ipFamilyPolicy: PreferDualStack
+  selector:
+    app: httpd_app_nautilus
+  ports:
+    - port: 8080
+      targetPort: 80
+      nodePort: 30004
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd-deployment-nautilus
+  namespace: httpd-service
+  labels:
+    app: httpd_app_nautilus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: httpd_app_nautilus
+  template:
+    metadata:
+      labels:
+        app: httpd_app_nautilus
+    spec:
+      volumes:
+        - name: nfs-vol
+          persistentVolumeClaim:
+            claimName: pvc-nfs
+      containers:
+        - name:  httpd-container-nautilus
+          image: nginx
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: nfs-vol
+              mountPath: /usr/share/nginx/html
